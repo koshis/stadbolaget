@@ -1,0 +1,51 @@
+{% load static %}
+
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/02.png');">
+    <article class="hoc cta clear"> 
+      <!-- ################################################################################################ -->
+      <h6 class=" center first">LÄMNA ER E-POSTADRESS OCH ERHÅLL VÅRA KAMPANJER OCH NYHETSBREV</h6>
+      
+        <div class="row" style="    width: 70%;
+        margin: 0 auto;" >
+            <form  id= "subID"enctype="multipart/form-data" method="post" action="/newsletter/news/subscribe/">
+        {% csrf_token %} 
+            <div class="" id="emailbox" style=" text-align: center;">
+                <div class="col-sm-9 ">
+                    <input placeholder="E-postadress"type="email" name="email_field" required="" id="id_email_field"class="form-control " >
+                </div>
+                <div class="col-sm-2">
+                        <button class="btn btn-white" id="id_submit" name="submit" value="Subscribe" type="submit">Subscribe</button>
+                </div>
+            </div>
+            <div id="subsuccess" hidden style=" text-align: center;">
+                <p> prenumererade framgångsrikt!!</p>
+            </div>
+            <div id="subfailed" hidden style=" text-align: center;">
+                <p> Något gick fel!</p>
+            </div>
+        </div>
+            
+        
+    </form>        <!-- ################################################################################################ -->
+    </article>
+  </div>
+
+  <script type="text/javascript">
+    var frm = $('#subID');
+    frm.submit(function () {
+        $.ajax({
+            type: frm.attr('post'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+                $("#SOME-DIV").html(data);
+                $("#emailbox").hide(); 
+                $("#subsuccess").show(); 
+            },
+            error: function(data) {
+                $("#subfailed").html("Något gick fel!");
+            }
+        });
+        return false;
+    });
+</script>

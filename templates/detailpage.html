@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+{% for Descripton in pagedetail %} {{Descripton.Title |safe }} - Städbolaget Märsta
+
+{% endfor %}
+{% endblock %}
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+<div class="wrapper row3">
+    <main class="hoc container clear">
+      <!-- main body -->
+      <!-- ################################################################################################ -->
+      {% include "side-menu.html" %}
+      <div class="content three_quarter">
+        <!-- ################################################################################################ -->
+
+            {% for Descripton in pagedetail %}
+            {{Descripton.Descripton |safe }}
+        {% endfor %}
+        </div>
+      <!-- ################################################################################################ -->
+      <!-- / main body -->
+      <div class="clear"></div>
+    </main>
+  </div>
+  {% include "contact_us.html" %}
+
+  {% endblock %}

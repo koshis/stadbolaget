@@ -1,0 +1,33 @@
+{% load static %}
+
+<div class="wrapper row2 ">
+
+
+<section class="hoc container clear testimonials">
+ <div class="sectiontitle">
+            <h6   class="heading"> Bli kontaktad av oss.</h6>
+
+        </div>
+    <form method="post" >
+            {% csrf_token %}
+                    <div class="row">
+                            {% for field in form  %}
+                            <small id="" class="text-danger">
+                                    {{ field.errors }}
+                            </small>
+                            {% if forloop.last %} <div class="col-sm-12">
+                           {% else %}
+                           <div class="col-sm-6">
+                           {% endif %}
+                           {{ item }}
+                           <div class="">
+                                {{ field.label_tag }}
+                           </div> {{ field }}
+                           </div>
+                            {% endfor %}
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-danger pull-right" >Skicka förfrågan</button>
+      </form>
+      </section>
+  </div>

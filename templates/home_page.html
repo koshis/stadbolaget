@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+{% block title %}Städbolaget Märsta Stockholm{% endblock %}
+
+{% block content %}
+
+<body id="top">
+<div class="wrapper bgded overlay" style="background-image:url('{% static "images/demo/backgrounds/01.png"%}');">
+  <div id="pageintro" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <article>
+      <!-- <p>Kvalitetsgaranti · Enklare Vardag · Professionellt & Säkert</p> -->
+      <h3 class="heading">Städbolaget Märsta
+      </h3>
+      <p>UTMÄRKT STÄDNING OCH LYCKLIGA KUNDER ÄR VÅRT MÅL
+      </p>
+     <h2>PROVSTÄDNING 99 kr / TIMME</h2>
+     <h2>BOKA HOSS OSS PROVSTÄDNING</h2>
+
+      <footer>
+        <!-- <ul class="nospace inline pushright">
+          <li><a class="btn" href="#">Quam scelerisque</a></li>
+          <li><a class="btn inverse" href="#">Sagittis dignissim</a></li>
+        </ul> -->
+      </footer>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<div class="wrapper row3">
+        <main class="hoc container clear">
+        <section id="innerblock">
+
+                 <div class="sectiontitle">
+                     <h6 class="heading">Tjänst vi erbjuder </h6>
+                    <p>Vi måste alla gå igenom en genomgångsprocess för att tillhandahålla högkvalitativ service. Det är dags att låt dig slappna av och överlämna alla dina rengöringsjobb. Låt oss ge dig en hand!</p>
+                 </div>
+                       <ul class="nospace btmspace-80 group">
+                            <li class="one_third first">
+                              <article><i class="fa fa-external-link" style="color:green"></i>
+                                <h2 class="heading "> ALLTID LÅGTPRIS</h62
+                              </article>
+                            </li>
+                            <li class="one_third">
+                              <article><i class="fa fa-external-link" style="color:green"></i>
+                                <h6 class="heading ">INGA BINDINGSTIDER</h6>
+                              </article>
+                            </li>
+                            <li class="one_third">
+                              <article><i class="fa fa-external-link" style="color:green"></i>
+                                <h6 class="heading">NÖJD KUND- GARANTI</h6>
+                              </article>
+                            </li>
+                          </ul>
+                </ul>
+                <!-- <p class="center"><a class="btn" href="#">Eleifend dui auctor</a></p> -->
+              </section>
+              </main>
+
+</div>
+{% include "review.html" %}
+{% include "contact_us.html" %}
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+
+</body>
+{% endblock %}

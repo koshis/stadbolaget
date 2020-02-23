@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+<div class="wrapper bgded overlay" style="background-image:url('{% static "images/demo/backgrounds/02.jpg"%}');">
+    <div id="breadcrumb" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <ul>
+        <li><a href="/">Hem</a></li>
+        <li><a href="#">Storstädning</a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+<div class="wrapper row3">
+        <main class="hoc container clear">
+        <section id="innerblock">
+
+                <div class="sectiontitle">
+                        <h6   class="heading"> VI HJÄLPER VÅRA KUNDER MED ALLA TYPER AV STÄDNING, ALLT FRÅN FLYTTSTÄDNING OCH KONTORSSTÄDNING TILL FÖNSTERPUTS OCH HEMSTÄDNING.</h6>
+                    </div>
+                    <ul class="nospace btmspace-80 group">
+                            <li class="one_third first">
+                              <article><i class="fa fa-external-link"></i>
+                                <h2 class="heading "><a href="{% url 'pages' title='storstädning'  %}">Storstädning</a></h62
+                              </article>
+                            </li>
+                            <li class="one_third">
+                              <article><i class="fa fa-external-link"></i>
+                                <h6 class="heading "><a href="{% url 'pages' title='fönsterputsning'  %}">Fönsterputsning</a></h6>
+                              </article>
+                            </li>
+                            <li class="one_third">
+                              <article><i class="fa fa-external-link"></i>
+                                <h6 class="heading"><a href="{% url 'pages' title='kontorsstädning'  %}">Kontorsstädning</a></h6>
+                              </article>
+                            </li>
+                          </ul>
+
+
+                <ul class="nospace btmspace-80 group">
+                  <li class="one_third first">
+
+                    <article>
+                            <i class="fa fa-external-link"></i>
+                      <h6 class="heading "><a href="{% url 'pages' title='golvvård'  %}">Golvvård</a></h6>
+                    </article>
+                  </li>
+                  <li class="one_third">
+                    <article><i class="fa fa-external-link"></i>
+                      <h6 class="heading"><a href="{% url 'pages' title='GOLVSLIPNING'  %}">GOLVSLIPNING</a></h6>
+                    </article>
+                  </li>
+                  <li class="one_third">
+                    <article><i class="fa fa-external-link"></i>
+                      <h6 class="heading "><a href="{% url 'pages' title='butikstädning'  %}">Butikstädning</a></h6>
+                    </article>
+                  </li>
+
+                </ul>
+                <ul class="nospace btmspace-80 group">
+                  <li class="one_third first">
+
+                    <article>
+                            <i class="fa fa-external-link"></i>
+                      <h6 class="heading "><a href="{% url 'pages' title='hemstädning'  %}">Hemstädning</a></h6>
+                    </article>
+                  </li>
+                  <li class="one_third">
+                    <article><i class="fa fa-external-link"></i>
+                      <h6 class="heading"><a href="{% url 'pages' title='Hotell städning'  %}">Hotell städning</a></h6>
+                    </article>
+                  </li>
+                  <li class="one_third">
+                    <article><i class="fa fa-external-link"></i>
+                      <h6 class="heading "><a href="{% url 'pages' title='trappstädning'  %}">Trappstädning</a></h6>
+                    </article>
+                  </li>
+
+                </ul>
+                <ul class="nospace btmspace-80 group">
+
+                  <li class="one_third first">
+                    <article><i class="fa fa-external-link"></i>
+                      <h6 class="heading "><a href="{% url 'pages' title='byggstädning'  %}">Byggstädning</a></h6>
+                    </article>
+                  </li>
+                   <li class="one_third">
+                    <article><i class="fa fa-external-link"></i>
+                      <h6 class="heading"><a href="{% url 'pages' title='flyttstädning'  %}">Flyttstädning</a></h6>
+                    </article>
+                  </li>
+                  <li class="one_third">
+                    <article><i class="fa fa-external-link"></i>
+                      <h6 class="heading "><a href="{% url 'pages' title='skolor och dagis'  %}">Skolor och dagis</a></h6>
+                    </article>
+                  </li>
+                </ul>
+                <!-- <p class="center"><a class="btn" href="#">Eleifend dui auctor</a></p> -->
+              </section>
+              </main>
+  {% include "contact_us.html" %}
+
+</div>
+{% endblock %}

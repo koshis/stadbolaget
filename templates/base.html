@@ -1,0 +1,226 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--<title>Städbolaget Märsta </title>
+-->
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123635933-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123635933-1');
+</script>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>
+    {% block title %}{% endblock %}
+  </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:image" content="{% static "images/demo/backgrounds/01.png"%}"/>
+
+
+        {# Global stylesheets #}
+          <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+          <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}">
+
+
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <div class="wrapper row0">
+      <div id="topbar" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <div class="fl_left">
+          <ul class="nospace">
+            <li><a href="/"><i class="fa fa-lg fa-home"></i></a></li>
+            <li class=""><a href="{% url 'pages' title='OM OSS'  %}">OM OSS</a></li>
+        <li class=""><a href="{% url 'pages' title='KONTAKTA OSS'  %}">KONTAKTA OSS</a></li>
+            <!-- <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li> -->
+          </ul>
+        </div>
+        <div class="fl_right">
+          <ul class="nospace">
+            <li><i class="fa fa-phone"></i>073 5460388 / 073 7183030</li>
+            <li style='text-transform: lowercase'><i class="fa fa-envelope-o"></i> info@stadbolagetmarsta.se</li>
+          </ul>
+        </div>
+        <!-- ################################################################################################ -->
+      </div>
+    </div>
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="/">Städbolaget Märsta </a></h1>
+    </div>
+    <nav id="mainav" class="fl_right">
+
+        <!-- <ul class="clear">
+            {% for menu, submenu in Category.items %}
+            {% if submenu %}
+	            <li class=" dropdown {% if menu in request.path %}active{% endif %} ">
+	              <a class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">{{menu }} <span class="caret"></span></a>
+	              <ul >
+                    {% for x in submenu %}
+	                  <li><a href="">{{x}}</a></li>
+                    {% endfor %}
+	               </ul>
+              </li>
+	            {% else%}
+	               <li class="{% if menu in request.path %}active{% endif %}"><a href="/category/{{ menu}}/">{{menu}}</a></li>
+	               {% endif %}
+
+	    {% endfor %}
+
+        </ul> -->
+       <ul class="clear">
+        <li ><a href="/">Hem</a></li>
+        <li><a class="drop" href="{% url 'cleaning' %}">StädTjänster </a>
+          <ul>
+            <!--<li><a class="drop" href="{% url 'cleaning' %}">Lokalvård</a>-->
+                <li class=" {% if 'storstädning' in request.path %}active{% endif %} " ><a href="{% url 'pages' title='storstädning'  %}">Storstädning</a></li>
+                <li class=" {% if 'fönsterputsning' in request.path %}active{% endif %} "><a href="{% url 'pages' title='fönsterputsning'  %}">Fönsterputsning</a></li>
+                <li class=" {% if 'kontorsstädning' in request.path %}active{% endif %} "><a href="{% url 'pages' title='kontorsstädning'  %}">Kontorsstädning</a></li>
+                 <li class=" {% if 'golvvård' in request.path %}active{% endif %} "><a href="{% url 'pages' title='golvvård'  %}">Golvvård</a></li>
+                <li class=" {% if 'butikstädning' in request.path %}active{% endif %} "><a href="{% url 'pages' title='butikstädning'  %}">Butikstädning</a></li>
+                <li class=" {% if 'skolor och dagis' in request.path %}active{% endif %} "><a href="{% url 'pages' title='skolor och dagis'  %}">Skolor och dagis</a></li>
+                <li class=" {% if 'hemstädning' in request.path %}active{% endif %} "><a href="{% url 'pages' title='hemstädning'  %}">Hemstädning</a></li>
+                <li class=" {% if 'Hotell städning' in request.path %}active{% endif %} "><a href="{% url 'pages' title='Hotell städning'  %}">Hotell städning</a></li>
+                <li class=" {% if 'trappstädning' in request.path %}active{% endif %} "><a href="{% url 'pages' title='trappstädning'  %}">Trappstädning</a></li>
+                <li class=" {% if 'byggstädning' in request.path %}active{% endif %} "><a href="{% url 'pages' title='byggstädning'  %}">Byggstädning</a></li>
+                <li class=" {% if 'flyttstädning' in request.path %}active{% endif %} "><a href="{% url 'pages' title='flyttstädning'  %}">Flyttstädning</a></li>
+
+
+
+
+          </ul>
+        </li>
+        <li class=" dropdown {% if 'Kvalitet' in request.path %}active{% endif %} "><a href=" {% url 'pages' title='Kvalitet'  %}" >Kvalitet</a></li>
+        <li class="dropdown {% if 'OM OSS' in request.path %}active{% endif %}"><a href="{% url 'pages' title='OM OSS'  %}">OM OSS</a></li>
+        <li class="dropdown {% if 'KONTAKTA OSS' in request.path %}active{% endif %}"><a href="{% url 'pages' title='KONTAKTA OSS'  %}">KONTAKTA OSS</a></li>
+      </ul>
+    </nav>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+    <body class="{% block body_class %}{% endblock %}">
+
+
+        {% block content %}{% endblock %}
+
+
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
+         <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/jquery.backtotop.js' %}"></script>
+        <script src="{% static 'js/jquery.mobilemenu.js' %}"></script>
+    </body>
+    <!-- Footer Background Image Wrapper -->
+<div class="bgded overlay" style=" background-color: #2a373b;">
+  <!-- ################################################################################################ -->
+  <div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div class="one_quarter first">
+        <h6 class="heading">Aliquet ut auctor</h6>
+        <ul class="nospace btmspace-30 linklist contact">
+          <li><i class="fa fa-map-marker"></i>
+            <address>
+            Heimdalsgatan 22 <br>19550 Märsta
+            </address>
+          </li>
+          <li><i class="fa fa-phone"></i> Chiranjibi Kharel - 0735460388</li>
+          <li><i class="fa fa-phone"></i>  Sanjay Thapa - 0737183030</li>
+          <li><i class="fa fa-envelope-o"></i> info@stadbolagetmarsta.se</li>
+        </ul>
+        <ul class="faico clear">
+          <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+      <div class="one_quarter">
+          <h6 class="heading">Snabb länk</h6>
+          <ul class="nospace linklist">
+              <li><a href="/">Hem</a></li>
+              <li><a href="{% url 'pages' title='storstädning'  %}">Storstädning</a></li>
+              <li><a href="{% url 'pages' title='fönsterputsning'  %}">Fönsterputsning</a></li>
+              <li><a href="{% url 'pages' title='kontorsstädning'  %}">Kontorsstädning</a></li>
+               <li><a href="{% url 'pages' title='golvvård'  %}">Golvvård</a></li>
+              <li><a href="{% url 'pages' title='butikstädning'  %}">Butikstädning</a></li>
+              <li><a href="{% url 'pages' title='skolor och dagis'  %}">Skolor och dagis</a></li>
+
+
+
+
+          </ul>
+        </div>
+      <div class="one_quarter">
+        <h6 class="heading">Snabb länk</h6>
+        <ul class="nospace linklist">
+            <li><a href="{% url 'pages' title='hemstädning'  %}">Hemstädning</a></li>
+            <li><a href="{% url 'pages' title='Hotell städning'  %}">Hotell städning</a></li>
+
+            <li><a href="{% url 'pages' title='trappstädning'  %}">Trappstädning</a></li>
+            <li><a href="{% url 'pages' title='byggstädning'  %}">Byggstädning</a></li>
+            <li><a href="{% url 'pages' title='flyttstädning'  %}">Flyttstädning</a></li>
+            <li><a href=" {% url 'pages' title='Kvalitet'  %}" >Kvalitet</a></li>
+        <li class=""><a href="{% url 'pages' title='OM OSS'  %}">OM OSS</a></li>
+        <li class=""><a href="{% url 'pages' title='KONTAKTA OSS'  %}">KONTAKTA OSS</a></li>
+        </ul>
+
+      </div>
+      <div class="one_quarter">
+        <p class="nospace btmspace-15">LÄMNA ER E-POSTADRESS OCH ERHÅLL VÅRA KAMPANJER OCH NYHETSBREV</p>
+        <form  id= "subID"enctype="multipart/form-data" method="post" action="/newsletter/news/subscribe/">
+          {% csrf_token %}
+              <div class="" id="emailbox" style=" text-align: center;">
+                  <div class="col-sm-9 ">
+                      <input placeholder="E-postadress"type="email" name="email_field" required="" id="id_email_field"class="form-control " >
+                  </div>
+                  <div class="col-sm-2">
+                          <button class="btn btn-white" id="id_submit" name="submit" value="Subscribe" type="submit">Subscribe</button>
+                  </div>
+              </div>
+              <div id="subsuccess" hidden style=" text-align: center;">
+                  <p> prenumererade framgångsrikt!!</p>
+              </div>
+              <div id="subfailed" hidden style=" text-align: center;">
+                  <p> Något gick fel!</p>
+              </div>
+          </div>
+
+
+      </form>
+      </div>
+      <!-- ################################################################################################ -->
+    </footer>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Städbolaget Märsta HB </a></p>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Footer Background Image Wrapper -->
+</html>
