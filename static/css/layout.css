@@ -281,7 +281,7 @@ label span{color:#FF0000; background-color:inherit;}
 input:focus, textarea:focus, *:required:focus{border-color:#FF090F;}
 
 .overlay{color:#FFFFFF; background-color:inherit;}
-.overlay::after{color:inherit; background-color:rgba(0,0,0,.37}
+.overlay::after{color:inherit; background-color:rgba(0,0,0,.37);}
 .overlay.light{color:#474747;}
 .overlay.light::after{background-color:rgba(233,233,233,.9);/* #E9E9E9 */}
 

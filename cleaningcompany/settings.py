@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ptxlys+^ob)#6lsv=04=#gw-s0@4z*dmvbknvrb7%t9dcw*x8*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.stadbolagetmarsta.se']
-SECURE_SSL_REDIRECT = True
+ALLOWED_HOSTS = ['127.0.0.1']
+SECURE_SSL_REDIRECT = False
 #Email
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_USER = 'customer@stadbolagetmarsta.se'
