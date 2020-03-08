@@ -1,0 +1,36 @@
+{% load static %}
+
+<div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="/">Städbolaget Märsta </a></h1>
+      </a>
+      </div>
+      <nav id="mainav" class="fl_right rounded-circle">
+        <ul class="clear">
+          {%for n ,m in Category.items %}
+            <li class="  {% if n.url in request.path %}active{% endif %}" ><a  class="{% if m %}drop{%endif%} "href="{% url 'pages' slug=n.url  %}">{{n.menu}}</a>
+              {% if not m %}</li>{%endif%}
+              <ul>
+              {%for i in m %}
+  
+              {% if i.name%}
+            
+              <li class="  {% if i.url in request.path %}active{% endif %}" ><a  href="{% url 'pages' slug=i.url %}">{{i.name}}</a></li>
+                      
+              {%else%}
+  
+              {%endif%}
+           
+            {% endfor %}
+            </li>
+          </ul> 
+          {%endfor%}
+        </li>
+        </ul>
+         </nav>
+        
+    </header>
+  </div>
+ 
