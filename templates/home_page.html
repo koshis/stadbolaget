@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block body_class %}template-homepage{% endblock %}
-{% block title %}Städbolaget Märsta Stockholm{% endblock %}
+{% block title %}Städbolaget Märsta Stockholm | hemstädning märsta | städhjälp märsta | städning märsta{% endblock %}
 
 {% block content %}
 
@@ -12,12 +12,16 @@
     <!-- ################################################################################################ -->
     <article>
       <!-- <p>Kvalitetsgaranti · Enklare Vardag · Professionellt & Säkert</p> -->
+      <div class="slide-down">
       <h3 class="heading">Städbolaget Märsta
       </h3>
       <p>UTMÄRKT STÄDNING OCH LYCKLIGA KUNDER ÄR VÅRT MÅL
       </p>
      <h2>PROVSTÄDNING 99 kr / TIMME</h2>
      <h2>BOKA HOSS OSS PROVSTÄDNING</h2>
+     <a class="btn" href="{% url 'pages' slug='KONTAKTA-OSS'  %}">KONTAKTA OSS</a>
+
+     </div>
 
       <footer>
         <!-- <ul class="nospace inline pushright">
@@ -40,7 +44,7 @@
                        <ul class="nospace btmspace-80 group">
                             <li class="one_third first">
                               <article><i class="fa fa-external-link" style="color:green"></i>
-                                <h2 class="heading "> ALLTID LÅGTPRIS</h62
+                                <h2 class="heading "> ALLTID LÅGTPRIS</h>
                               </article>
                             </li>
                             <li class="one_third">
@@ -60,7 +64,23 @@
               </main>
 
 </div>
+
+
 {% include "review.html" %}
+
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay " >
+  <article class="hoc cta clear"  > 
+    <div class="slide-right">
+    <!-- ################################################################################################ -->
+    <h6  id="slide" class="three_quarter first">Our ambition is to provide the best cleaning service in Märsta and its surroundings!     </h6>
+    <footer class="one_quarter">     <a class="btn" href="{% url 'pages' slug='KONTAKTA-OSS'  %}">KONTAKTA OSS</a>
+    </footer>
+    <!-- ################################################################################################ -->
+    </div>
+  </article>
+</div>
+<!-- ################################################################################################ -->
 {% include "contact_us.html" %}
 
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>

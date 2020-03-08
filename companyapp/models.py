@@ -1,6 +1,8 @@
 from django.db import models
 from time import time
 from ckeditor.fields import RichTextField
+from django.utils.text import slugify
+
 
 def generate_filename(instance, filename):
     ext = filename.split('.')[-1]
@@ -8,70 +10,58 @@ def generate_filename(instance, filename):
 
 class EntryQuerySet(models.QuerySet):
         def published(self):
-            return self.filter(has_level_two=True)
+            return self.filter(published=True)
 
 class MenuItem(models.Model):
-    Level_one = models.CharField(max_length=200)
-    has_level_two=models.BooleanField(default=False)
-    Level_two = models.CharField(max_length=200)
-    has_level_three=models.BooleanField(default=False)
-    Level_three = models.CharField(max_length=200)
-    BriefDisription=RichTextField()
-    Disription=RichTextField()
-    Icon=models.ImageField(upload_to=generate_filename)
+    menu=models.CharField(max_length=100)
+    url = models.SlugField(unique=True)
+    Descripton=RichTextField()
+    order = models.PositiveSmallIntegerField(default=0, help_text='The order of the menu determines where this menu appears alongside other menus.')
+    hassidemenu=models.BooleanField(default=True, help_text="if True page includes side menu")
+    published=models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
 
     objects = EntryQuerySet.as_manager()
 
     def __str__(self):
-        return self.Level_one
+        return self.menu
     class Meta:
-        verbose_name="Top Menu"
-        verbose_name_plural="Top Menus"
-        ordering=["-created"]
-class menu_top_level(models.Model):
-        Name = models.CharField(max_length=200)
-        Order= models.IntegerField()
-        url=models.URLField(max_length=200)
-        published=models.BooleanField(default=False)
-        created = models.DateTimeField(auto_now_add=True)
+        verbose_name="Menu"
+        verbose_name_plural="Menus"
+        ordering=["-order"]
 
-        def __str__(self):
-            return self.Name
-        class Meta:
-            verbose_name="Top Menu"
-            verbose_name_plural="Top Menus"
-            ordering=["-Order"]
+    def save(self, *args, **kwargs):
+        self.url = self.url or slugify(self.menu)
+        super().save(*args, **kwargs)
+    def get_absolute_url(self):
+                return "/kategori/%s/" % self.menu
 
-class menu_mid_level(models.Model):
-        TopMenu = models.ForeignKey(menu_top_level, on_delete=models.CASCADE)
-        Name = models.CharField(max_length=200)
-        Order= models.IntegerField()
-        url=models.URLField(max_length=200)
-        published=models.BooleanField(default=False)
-        created = models.DateTimeField(auto_now_add=True)
 
-        def __str__(self):
-            return self.Name
+class Menucategory(models.Model):
+    menu=models.ForeignKey(MenuItem)
+    name=models.CharField(max_length=100)
+    Descripton=RichTextField()
+    url = models.SlugField(unique=True)
+    order = models.PositiveSmallIntegerField(default=0, help_text='The order of the menu determines where this menu appears alongside other menus.')
+    hassidemenu=models.BooleanField(default=True, help_text="if True page includes side menu")
+    published=models.BooleanField(default=False)
+    created= models.DateTimeField(auto_now_add=True)
 
-        class Meta:
-            verbose_name="Mid Level Menu"
-            verbose_name_plural="Mid Level Menus"
-            ordering=["-Order"]
+    objects=EntryQuerySet.as_manager()
 
-class menu_bot_level(models.Model):
-        MiddleMenu = models.ForeignKey(menu_mid_level, on_delete=models.CASCADE)
-        Name = models.CharField(max_length=200)
-        Order= models.IntegerField()
-        url=models.URLField(max_length=200)
-        published=models.BooleanField(default=False)
-        created = models.DateTimeField(auto_now_add=True)
-        def __str__(self):
-            return self.Name
-        class Meta:
-            verbose_name="Third Level Menu"
-            verbose_name_plural="Third Level Menus"
-            ordering=["-created"]
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name="Sub Menu"
+        verbose_name_plural="Sub Menus"
+        ordering=["-order"]
+
+    def save(self, *args, **kwargs):
+        self.url = self.url or slugify(self.name)
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+                return "/kategori/%s/" % self.name
 
 class Messages(models.Model):
     Name = models.CharField(max_length=200,error_messages={'blank' : 'BLANK','required' : 'REQUIRED'})
@@ -81,19 +71,7 @@ class Messages(models.Model):
     Message = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
 
-class Pages(models.Model):
-    Title = models.CharField(max_length=200)
-    Descripton=RichTextField()
-    published=models.BooleanField(default=False)
-    created = models.DateTimeField(auto_now_add=True)
 
-
-    class Meta:
-        verbose_name="Page"
-        verbose_name_plural="Pages"
-
-    def get_absolute_url(self):
-                return "/kategori/%s/" % self.Title
 
 
 

@@ -1,5 +1,5 @@
 from django.contrib.sitemaps import Sitemap
-from .models import Pages
+from .models import MenuItem,Menucategory
  
  
 class PostSitemap(Sitemap):    
@@ -7,7 +7,7 @@ class PostSitemap(Sitemap):
     priority = 0.9
  
     def items(self):
-        return Pages.objects.all()
+        return Menucategory.objects.all()
  
     # def lastmod(self, obj):
     #     return Pages.published

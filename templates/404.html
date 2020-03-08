@@ -3,7 +3,47 @@
 {% block body_class %}template-404{% endblock %}
 
 {% block content %}
-    <h1>Page not found</h1>
+    <!-- Page Content -->
+    <div class="container">
 
-    <h2>Sorry, this page could not be found.</h2>
+      <!-- Page Heading/Breadcrumbs -->
+      <h2 class="mt-4 mb-3"  style="font-size: 35px;">404
+        <small>Page Not Found</small>
+      </h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item active">404</li>
+      </ol>
+
+      <div class="jumbotron">
+        <h1 class="display-1">404</h1>
+        <p>The page you're looking for could not be found. Here are some helpful links to get you back on track:</p>
+        <ul>
+            {%for n ,m in Category.items %}
+              <li ><a  class=""href="{% url 'pages' slug=n.url  %}">{{n.menu}}</a>
+              
+                {%for i in m %}
+                {% if i.name%}
+              <ul>
+                <li class="  " ><a href="{% url 'pages' slug=i.url %}">{{i.name}}</a></li>
+    
+              </ul>
+              
+             
+                {%else%}
+    
+                {%endif%}
+              {% endfor %}
+            </li>
+            {%endfor%}
+          </ul>
+      </div>
+      <!-- /.jumbotron -->
+
+    </div>
+    <!-- /.container -->
+
 {% endblock %}

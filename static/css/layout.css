@@ -13,13 +13,14 @@
 .row3, .row3 a{}
 .row4, .row4 a{}
 .row5, .row5 a{}
-
+a:hover{text-decoration: none!important;}
 .font-x1 {
     font-size: 1rem;
 }
 /* Top Bar
 --------------------------------------------------------------------------------------------------------------- */
-#topbar{padding:15px 0; font-size:0.8rem; text-transform:uppercase;}
+#topbar{padding:15px 0; font-size:0.9rem; text-transform:uppercase; font-family: sans-serif;
+    font-weight: bold;}
 
 #topbar *{margin:0;}
 #topbar ul li{display:inline-block; margin-right:10px; padding-right:15px; border-right:1px solid;}
@@ -32,7 +33,7 @@
 #header{}
 
 #header #logo{margin:30px 0 0 0;}
-#header #logo h1{margin:0; padding:0; font-size:22px; text-transform:uppercase;}
+#header #logo h1{margin:0; padding:0; font-size:25px; text-transform:uppercase;}
 
 
 /* Page Intro
@@ -175,7 +176,9 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav .drop::after, #mainav li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after{position:absolute; font-family:"FontAwesome"; font-size:10px; line-height:10px;}
 
 /* Top Navigation */
-#mainav{}
+#mainav{font-size: 15px;
+    font-family: sans-serif;
+    font-weight: bold;}
 #mainav ul{text-transform:uppercase;}
 #mainav ul ul{z-index:9999; position:absolute; width:180px; text-transform:none;}
 #mainav ul ul ul{left:180px; top:0;}
@@ -254,7 +257,7 @@ td{border-width:0 1px;}
 .faico a{display:inline-block; width:36px; height:36px; line-height:36px; font-size:18px; text-align:center;}
 
 .faico a{color:#474747; background-color:#EEEEEE;}
-.faico a:hover{color:#FFFFFF; background-color:#FF090F;}
+.faico a:hover{color:#FFFFFF; background-color:#bacc18;}
 
 .faicon-dribble:hover{background-color:#EA4C89;}
 .faicon-facebook:hover{background-color:#3B5998;}
@@ -274,18 +277,18 @@ td{border-width:0 1px;}
 /* Colours
 --------------------------------------------------------------------------------------------------------------- */
 body{color:#474747; background-color:#FFFFFF;}
-a{color:#FF090F;}
+a{color:#bacc18;}
 a:active, a:focus{background:transparent;}/* IE10 + 11 Bugfix - prevents grey background */
 hr, .borderedbox{border-color:#D7D7D7;}
 label span{color:#FF0000; background-color:inherit;}
-input:focus, textarea:focus, *:required:focus{border-color:#FF090F;}
+input:focus, textarea:focus, *:required:focus{border-color:#bacc18;}
 
 .overlay{color:#FFFFFF; background-color:inherit;}
 .overlay::after{color:inherit; background-color:rgba(0,0,0,.37);}
 .overlay.light{color:#474747;}
 .overlay.light::after{background-color:rgba(233,233,233,.9);/* #E9E9E9 */}
 
-.btn, .btn.inverse:hover{color:#FFFFFF; background-color:#FF090F; border-color:#FF090F;}
+.btn, .btn.inverse:hover{color:#FFFFFF; background-color:#bacc18; border-color:#bacc18;}
 .btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
 
 blockquote::before{color:rgba(0,0,0,.2);}
@@ -303,7 +306,7 @@ blockquote::before{color:rgba(0,0,0,.2);}
 
 /* Top Bar */
 #topbar ul li{border-color:rgba(0,0,0,.2);}
-#topbar div:first-of-type li:first-child a{color:#D01818;}
+#topbar div:first-of-type li:first-child a{color:#bacc18;}
 
 
 /* Header */
@@ -334,32 +337,32 @@ blockquote::before{color:rgba(0,0,0,.2);}
 
 #footer input, #footer button{border-color:transparent;}
 #footer input{color:#474747; background-color:#EEEEEE;}
-#footer input:focus{border-color:#FF090F;}
-#footer button{color:#FFFFFF; background-color:#FF090F;}
+#footer input:focus{border-color:#bacc18;}
+#footer button{color:#FFFFFF; background-color:#bacc18;}
 
 
 /* Navigation */
 #mainav li a{color:inherit;}
-#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#FF090F; background-color:#ededed;}
-#mainav li li a, #mainav .active li a{text-transform: uppercase;,color:#474747; background-color:rgba(233,233,233,.8);/* #E9E9E9 */ border-color:rgba(255,255,255,.4);}
-#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#FF090F;}
-#mainav form select{color:#FFFFFF; background-color:#25a906;}
+#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:black; background-color:#bacc18; }
+#mainav li li a, #mainav .active li a{text-transform: uppercase;color:#474747; background-color:rgba(233,233,233,.8);/* #E9E9E9 */ border-color:rgba(255,255,255,.4);}
+#mainav li li:hover > a, #mainav .active .active > a{color:black; background-color:#bacc18;}
+#mainav form select{color:rgb(5, 5, 5); background-color:#bacc18;}
 
 #breadcrumb a{color:inherit; background-color:inherit;}
-#breadcrumb li:last-child a{color:#FF090F;}
+#breadcrumb li:last-child a{color:#bacc18;}
 
 .container .sidebar nav a{color:inherit; border-color:#D7D7D7;}
-.container .sidebar nav a:hover{color:#FF090F;}
+.container .sidebar nav a:hover{color:#bacc18;}
 
 .pagination a, .pagination strong{border-color:#D7D7D7;}
-.pagination .current *{color:#FFFFFF; background-color:#FF090F;}
+.pagination .current *{color:#FFFFFF; background-color:#bacc18;}
 
-#backtotop{color:#FFFFFF; background-color:#FF090F;}
+#backtotop{color:#FFFFFF; background-color:#bacc18;}
 
 
 /* Tables + Comments */
 table, th, td, #comments .avatar, #comments input, #comments textarea{border-color:#D7D7D7;}
-#comments input:focus, #comments textarea:focus, #comments *:required:focus{border-color:#FF090F;}
+#comments input:focus, #comments textarea:focus, #comments *:required:focus{border-color:#bacc18;}
 th{color:#FFFFFF; background-color:#373737;}
 tr, #comments li, #comments input[type="submit"], #comments input[type="reset"]{color:inherit; background-color:#FBFBFB;}
 tr:nth-child(even), #comments li:nth-child(even){color:inherit; background-color:#F7F7F7;}
@@ -443,6 +446,8 @@ table a, #comments a{background-color:inherit;}
 
 @media screen and (max-width:450px){
 	#topbar ul li{margin-bottom:2px; padding-right:0; border-right:none;}
+	.sidebar{display: none;}
+
 }
 
 
@@ -457,5 +462,51 @@ table a, #comments a{background-color:inherit;}
 
 	.font-x2{font-size:1.4rem;}
 	.font-x3{font-size:1.6rem;}
+	.sidebar{display: none;}
 }
 .col-sm-6 li { display : inline; list-style-type: none; padding-left : 8vw; }
+
+div.slide-right {
+  width:100%;
+  overflow:hidden;
+}
+div.slide-right h6 {
+  animation: 1s slide-right;
+}
+div.slide-right footer {
+	animation: 1s slide-right;
+  }
+
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
+div.slide-down {
+	width:100%;
+	overflow:hidden;
+  }
+  div.slide-down p {
+	animation: 2s slide-down;
+  }
+  div.slide-down h3 {
+	animation: 2s slide-down;
+	margin-top:0%;
+
+  }
+  
+  @keyframes slide-down {
+	from {
+	  margin-top: -10%;
+	}
+  
+	to {
+	  margin-top: 0%;
+	}
+  }
+
+
