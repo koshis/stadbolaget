@@ -15,7 +15,7 @@
 .row5, .row5 a{}
 a:hover{text-decoration: none!important;}
 .font-x1 {
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 /* Top Bar
 --------------------------------------------------------------------------------------------------------------- */
@@ -55,16 +55,24 @@ a:hover{text-decoration: none!important;}
 
 .sectiontitle{display:block; max-width:55%; margin:0 auto 80px; text-align:center;}
 .sectiontitle *{margin:0;}
-
 #introblocks{position:relative; z-index:1; margin:-180px 0 80px; padding:80px 0 0 0; border-radius:10px;}
 #introblocks > ul > li{text-align:center;}/* Used when elements stack */
-#introblocks > ul > li img{filter: invert(50%);display:inline-block; position:absolute; top:0; left:0; width:70px; overflow:hidden; line-height:1; font-size:65px;}/* Force image width to fit the full width - remove if you don't like the function */
-#introblocks > ul > li img:hover{filter: none;display:inline-block; position:absolute; top:0; left:0; width:70px; overflow:hidden; line-height:1; font-size:65px;}/* Force image width to fit the full width - remove if you don't like the function */
-
+#introblocks > ul > li img{width:100%;}/* Force image width to fit the full width - remove if you don't like the function */
 #introblocks article{display:block; position:relative; padding:0 0 0 95px; line-height:normal; text-align:left;}
 #introblocks article *{margin:0; padding:0;}
+#introblocks article i{display:inline-block; position:absolute; top:0; left:0; width:85px; overflow:hidden; line-height:1; font-size:65px;}
 #introblocks article .heading{margin-bottom:10px;}
-#innerblock article i{ font-size:25px; float: left;     width: 35px;}
+
+#icon{}
+#icon > ul > li{text-align:center;}/* Used when elements stack */
+#icon > ul > li img{filter: invert(50%);display:inline-block; position:absolute; top:0; left:0; width:70px; overflow:hidden; line-height:1; font-size:65px;}/* Force image width to fit the full width - remove if you don't like the function */
+#icon > ul > li img:hover{filter: none;display:inline-block; position:absolute; top:0; left:0; width:70px; overflow:hidden; line-height:1; font-size:65px;}/* Force image width to fit the full width - remove if you don't like the function */
+
+#icon article{display:block; position:relative;  line-height:normal; text-align:left;}
+#icon article *{margin:0; padding:0;}
+#icon article .heading{margin-bottom:10px;}
+#icon article i{ font-size:25px; float: left;     width: 35px;}
+
 
 .overview{}
 .overview > li{margin-bottom:50px;}

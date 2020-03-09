@@ -23,8 +23,8 @@ def home(request):
             model_instance.save()
             _send_email(model_instance.Name, model_instance.Email, model_instance.PhoneNumber, model_instance.Location, model_instance.Message)
             return redirect('/')
-
-    return render(request, 'home_page.html', {
+    services=m.Menucategory.objects.filter(published=True)
+    return render(request, 'home_page.html', {'services':services,
         'form': form,
     })
 

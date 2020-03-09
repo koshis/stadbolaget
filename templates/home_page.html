@@ -18,7 +18,7 @@
       <p>UTMÄRKT STÄDNING OCH LYCKLIGA KUNDER ÄR VÅRT MÅL
       </p>
      <h2>PROVSTÄDNING 99 kr / TIMME</h2>
-     <h2>BOKA HOSS OSS PROVSTÄDNING</h2>
+     <h2>BOKA HOS OSS PROVSTÄDNING</h2>
      <a class="btn" href="{% url 'pages' slug='KONTAKTA-OSS'  %}">KONTAKTA OSS</a>
 
      </div>
@@ -33,18 +33,60 @@
     <!-- ################################################################################################ -->
   </div>
 </div>
+
 <div class="wrapper row3">
         <main class="hoc container clear">
-        <section id="innerblock">
+          <section id="introblocks">
+            <div class="sectiontitle">
+              <h6 class="heading">Tjänst vi erbjuder </h6>
+                    <p>Vi måste alla gå igenom en genomgångsprocess för att tillhandahålla högkvalitativ service. Det är dags att låt dig slappna av och överlämna alla dina rengöringsjobb. Låt oss ge dig en hand!</p>
+            </div>
+            <ul class="nospace btmspace-80 group">
+              {% for services in services|slice:":3"%}
+
+              <li class="one_third {% if forloop.first %}first{% endif %}">
+                
+                <article><i class="fa {{services.faicon}}"></i>
+                  <h5 class="heading font-x1"><a href="{% url 'pages' slug=services.url  %}">{{services.name}} </a></h5>
+                  <p> {{services.Descripton|truncatewords:15 |safe }} </p>
+                </article>
+              </li>
+                {%endfor%}
+                <!-- <article><i class="fa fa-diamond"></i>
+                  <h6 class="heading font-x1"><a href="#">Feugiat maximus nisi</a></h6>
+                  <p>Sem volutpat massa sed tristique nisi sem sed est cras pulvinar augue libero&hellip;</p>
+                </article>Feugiat maximus nisi
+              </li>
+              <li class="one_third">
+                <article><i class="fa fa-fort-awesome"></i>
+                  <h6 class="heading font-x1"><a href="#">Vel imperdiet libero</a></h6>
+                  <p>Condimentum id donec eu eros quis ligula sollicitudin malesuada scelerisque&hellip;</p>
+                </article>
+              </li>
+              <li class="one_third">
+                <article><i class="fa fa-forumbee"></i>
+                  <h6 class="heading font-x1"><a href="#">Dui nam sed tristique</a></h6>
+                  <p>Nunc sed ligula viverra egestas tincidunt accumsan porta eget lorem maecenas&hellip;</p>
+                </article>
+              </li> -->
+            </ul>
+            <p class="center"><a class="btn" href="{%url 'pages' slug='stadtjanster'%}">Mer</a></p>
+          </section>
+           <!-- ################################################################################################ -->
+    <hr class="btmspace-80">
+    <!-- ################################################################################################ -->
+        <section id="icon">
 
                  <div class="sectiontitle">
-                     <h6 class="heading">Tjänst vi erbjuder </h6>
-                    <p>Vi måste alla gå igenom en genomgångsprocess för att tillhandahålla högkvalitativ service. Det är dags att låt dig slappna av och överlämna alla dina rengöringsjobb. Låt oss ge dig en hand!</p>
+                     <h6 class="heading">Varför ska du välja oss? </h6>
+                    <p>Du har många goda skäl att välja oss när du letar efter städföretag nära dig
+                   </p>
+                   <p>Kontakta oss om du behöver ett städföretag i Märsta. Vi är ett städföretag i Märsta med erfaren och bra personal som alltid gör sitt bästa för att göra våra kunder lyckliga.</p>
                  </div>
                        <ul class="nospace btmspace-80 group">
                             <li class="one_third first">
                               <article><i class="fa fa-external-link" style="color:green"></i>
-                                <h2 class="heading "> ALLTID LÅGTPRIS</h>
+                                <h6 class="heading "> ALLTID LÅGTPRIS</h6>
                               </article>
                             </li>
                             <li class="one_third">
@@ -61,19 +103,20 @@
                 </ul>
                 <!-- <p class="center"><a class="btn" href="#">Eleifend dui auctor</a></p> -->
               </section>
+              
+              {% include "review.html" %}
               </main>
 
 </div>
 
 
-{% include "review.html" %}
 
 <!-- ################################################################################################ -->
 <div class="wrapper bgded overlay " >
   <article class="hoc cta clear"  > 
     <div class="slide-right">
     <!-- ################################################################################################ -->
-    <h6  id="slide" class="three_quarter first">Our ambition is to provide the best cleaning service in Märsta and its surroundings!     </h6>
+    <h6  id="slide" class="three_quarter first">Vår ambition är att leverera den bästa städservicen i Märsta med omnejd!     </h6>
     <footer class="one_quarter">     <a class="btn" href="{% url 'pages' slug='KONTAKTA-OSS'  %}">KONTAKTA OSS</a>
     </footer>
     <!-- ################################################################################################ -->

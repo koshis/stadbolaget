@@ -19,6 +19,7 @@ class MenuItem(models.Model):
     order = models.PositiveSmallIntegerField(default=0, help_text='The order of the menu determines where this menu appears alongside other menus.')
     hassidemenu=models.BooleanField(default=True, help_text="if True page includes side menu")
     published=models.BooleanField(default=False)
+    faicon=models.CharField(max_length=100)
     created = models.DateTimeField(auto_now_add=True)
 
     objects = EntryQuerySet.as_manager()
@@ -45,6 +46,7 @@ class Menucategory(models.Model):
     order = models.PositiveSmallIntegerField(default=0, help_text='The order of the menu determines where this menu appears alongside other menus.')
     hassidemenu=models.BooleanField(default=True, help_text="if True page includes side menu")
     published=models.BooleanField(default=False)
+    faicon=models.CharField(max_length=100)
     created= models.DateTimeField(auto_now_add=True)
 
     objects=EntryQuerySet.as_manager()
