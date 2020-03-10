@@ -30,7 +30,7 @@ SECURE_SSL_REDIRECT = False
 #Email
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_USER = 'customer@stadbolagetmarsta.se'
-EMAIL_HOST_PASSWORD = 'Mteverest8848'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
